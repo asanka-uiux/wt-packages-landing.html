@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wheel & Tire Packages, Mounted, Balanced & Shipped Free | TrailBuilt Offroad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TRAILBUILT OFFROAD — W/T PACKAGES LANDING PAGE
+   Brand: Papaya + Outer Space + Asparagus + Thunder
+   Fonts: Hey August (display H1) · Montserrat Black/Bold (headings/subheads) · Regular (body)
+   ============================================================ */
+@font-face {
+  font-family: 'Hey August';
+  src: url('fonts/Hey August.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* TrailBuilt brand palette */
+  --brand-primary:       #FF6720;  /* Mid orange - bright brand color */
+  --brand-primary-hover: #ff8c52;  /* Light orange */
+  --brand-primary-press: #E0540F;  /* Darker mid orange, for hover on white-text buttons */
+  --brand-primary-deep:  #9c4516;  /* Dark orange */
+  --brand-primary-light: rgba(255,103,32,.10);
+  --brand-accent:        #7E914D;  /* Asparagus */
+  --brand-accent-dim:    rgba(126,145,77,.12);
+  --brand-accent-deep:   #5A6B35;  /* Asparagus, darkened for white text */
+  --brand-dark:          #2D3349;  /* Outer Space */
+  --brand-charcoal:      #181818;  /* Thunder */
+  --brand-black:         #000000;  /* Jaguar */
+  --brand-mid-gray:      #6B6B6B;
+  --brand-text-gray:     #9A9A9A;
+  --brand-border:        #E0E0E0;
+  --brand-off-white:     #F5F3EF;
+  --brand-white:         #FFFFFF;  /* Porcelain */
+
+  /* Financing partner colors (from affirm.com / katapult.com) */
+  --affirm-blue:         #4A4AF4;
+  --affirm-blue-hover:   #3838D6;
+  --katapult-pink:       #ED5370;
+  --katapult-pink-hover: #D63A59;
+  --katapult-navy:       #131340;
+
+  --font-heading: 'Montserrat', 'Impact', sans-serif;
+  --font-body:    'Montserrat', 'Open Sans', sans-serif;
+  --font-cta:     'Montserrat', sans-serif;
+
+  --radius:    2px;
+  --radius-md: 4px;
+}
+
+/* ---- RESET ---- */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size:16px; scroll-behavior:smooth; -webkit-font-smoothing:antialiased; }
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--brand-charcoal);
+  background: var(--brand-off-white);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+img { max-width:100%; display:block; }
+a   { text-decoration:none; color:inherit; }
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+  line-height: 1.05;
+}
+.container { width:100%; max-width:1200px; margin:0 auto; padding:0 24px; }
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header {
+  position: sticky; top:0; z-index:100;
+  background: var(--brand-dark);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  border-top: 3px solid var(--brand-primary);
+  display: flex; align-items:center; justify-content:center; gap: 24px;
+  padding: 14px 24px;
+  box-shadow: 0 2px 10px rgba(0,0,0,.20);
+}
+.logo-wrap { display: flex; align-items: center; }
+
+.header-add-vehicle { display: none; }
+@media (max-width: 860px) {
+  .site-header { padding: 12px 16px; }
+  .site-header.is-scrolled { justify-content: space-between; }
+  .logo-wrap img { height: 34px; }
+  .site-header .sticky-bar { display: none; }
+  .header-add-vehicle {
+    display: inline-flex; align-items: center; gap: 6px;
+    position: absolute; right: 16px; top: 50%;
+    transform: translateY(calc(-50% - 6px)); opacity: 0; visibility: hidden;
+    transition: transform .25s ease, opacity .25s ease, visibility .25s;
+    min-height: 40px; padding: 0 16px;
+    font-family: var(--font-cta); font-size: .78rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .06em; white-space: nowrap;
+    color: var(--brand-white); background: var(--brand-primary);
+    border: none; border-radius: var(--radius-md); cursor: pointer;
+  }
+  .site-header.is-scrolled .header-add-vehicle {
+    position: static; transform: none; opacity: 1; visibility: visible;
+  }
+  .header-add-vehicle:hover { background: var(--brand-primary-press); }
+  .header-add-vehicle:focus-visible { outline: 3px solid var(--brand-white); outline-offset: 2px; }
+}
+.logo-wrap img {
+  height: 40px; width: auto; display: block;
+  filter: brightness(0) invert(1);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  min-height: 600px;
+  display: flex; align-items: center;
+  background: var(--brand-dark);
+  overflow: hidden;
+}
+.hero__photo {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+.hero__overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(to right, rgba(45,51,73,.96) 0%, rgba(45,51,73,.76) 45%, rgba(45,51,73,.32) 70%, rgba(45,51,73,.10) 100%),
+    linear-gradient(to top,   rgba(24,24,24,.90) 0%, transparent 50%);
+  z-index: 2;
+}
+.hero__glow {
+  position: absolute; bottom:-60px; left:20%;
+  width:400px; height:200px;
+  background: var(--brand-primary);
+  opacity:.18; filter:blur(100px);
+  z-index:2; pointer-events:none;
+}
+.hero__accent-glow {
+  position: absolute; top:-40px; right:8%;
+  width:320px; height:320px;
+  background: var(--brand-accent);
+  opacity:.08; filter:blur(80px);
+  z-index:2; pointer-events:none;
+}
+
+/* ---- Leading lines: diagonal speed stripes in hero ---- */
+.hero__lines {
+  position: absolute; inset: 0;
+  z-index: 3; pointer-events: none; overflow: hidden;
+}
+.hero__lines::before {
+  content: '';
+  position: absolute;
+  bottom: -10%; right: 28%;
+  width: 1px; height: 130%;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(244,112,40,.10) 35%,
+    rgba(244,112,40,.22) 55%,
+    rgba(126,145,77,.18) 75%,
+    transparent 100%);
+  transform: rotate(-20deg);
+  transform-origin: bottom center;
+}
+.hero__lines::after {
+  content: '';
+  position: absolute;
+  bottom: -10%; right: 22%;
+  width: 1px; height: 140%;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(244,112,40,.06) 35%,
+    rgba(244,112,40,.12) 55%,
+    rgba(126,145,77,.10) 75%,
+    transparent 100%);
+  transform: rotate(-20deg);
+  transform-origin: bottom center;
+}
+.hero__line3 {
+  position: absolute;
+  bottom: -10%; right: 16%;
+  width: 1px; height: 150%;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(244,112,40,.04) 45%,
+    rgba(126,145,77,.08) 70%,
+    transparent 100%);
+  transform: rotate(-20deg);
+  transform-origin: bottom center;
+  z-index: 3; pointer-events: none;
+}
+
+.hero__redline {
+  position: absolute; bottom:0; left:0; right:0;
+  height: 3px;
+  background: var(--brand-primary);
+  box-shadow: 0 0 14px rgba(244,112,40,.55);
+  z-index: 6;
+}
+
+/* Animated scroll cue */
+.hero__scroll-cue {
+  position: absolute;
+  bottom: 18px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 7;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.hero__scroll-cue span {
+  font-family: var(--font-cta);
+  font-size: 9px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: rgba(255,255,255,.28);
+}
+.hero__scroll-cue svg {
+  width: 20px; height: 20px;
+  fill: none; stroke: rgba(255,255,255,.30); stroke-width: 2;
+  animation: bounce-down 2.2s ease-in-out infinite;
+}
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(5px); }
+}
+
+.hero__inner {
+  position: relative; z-index: 5;
+  width: 100%; max-width: 1440px; margin: 0 auto;
+  padding: 60px 24px 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 48px;
+}
+
+/* Left copy */
+.hero__copy { flex:1; max-width:560px; }
+
+.hero-badge {
+  display: inline-flex; align-items:center; gap:6px;
+  padding: 5px 12px;
+  border: 1px solid var(--brand-primary);
+  font-family: var(--font-cta);
+  font-size:11px; font-weight:800;
+  text-transform:uppercase; letter-spacing:.08em;
+  color: var(--brand-white);
+  background: var(--brand-primary-deep);
+  margin-bottom: 20px;
+}
+.hero-badge .dot {
+  width:6px; height:6px; border-radius:50%;
+  background: var(--brand-primary);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+/* ---- Hey August hero headline ---- */
+.hero h1 {
+  font-family: 'Hey August', 'Montserrat', sans-serif;
+  font-size: clamp(3.4rem, 7.8vw, 5.6rem);
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  line-height: 1;
+  color: var(--brand-white);
+  margin-bottom: 18px;
+}
+
+/* ---- Section H2/H3s using Hey August (override base heading styles) ---- */
+.why-packages__copy h2,
+.wheel-gallery__title,
+.reviews-strip h2,
+.financing-inner h2,
+.gallery-section h2 {
+  font-family: 'Hey August', 'Montserrat', sans-serif !important;
+  font-weight: normal !important;
+  letter-spacing: 0 !important;
+  line-height: 1.1;
+}
+.why-packages__copy h2 { font-size: 3.6rem; }
+.wheel-gallery__title  { font-size: 2.4rem; }
+.reviews-strip h2      { font-size: 2.9rem; }
+.financing-inner h2    { font-size: 2.9rem; }
+.gallery-section h2    { font-size: 3.3rem; }
+.hero h1 > span,
+.hero h1 em {
+  display: block;
+  white-space: nowrap;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--brand-primary);
+}
+
+.hero__sub {
+  font-family: var(--font-body);
+  font-size: 1.05rem; font-weight: 400;
+  color: rgba(255,255,255,.72);
+  max-width: 480px; margin-bottom: 28px; line-height: 1.65;
+}
+.hero__sub strong { color: var(--brand-primary); font-weight: 700; }
+
+.hero__trust { display:flex; gap:24px; flex-wrap:wrap; }
+.hero__trust-item { display:flex; align-items:center; gap:8px; }
+.hero__trust-icon {
+  width:18px; height:18px; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  color: var(--brand-white);
+}
+.hero__trust-text {
+  font-family: var(--font-cta);
+  font-size:12px; font-weight:700;
+  text-transform:uppercase; letter-spacing:.04em;
+  color: var(--brand-white);
+}
+
+/* YMM panel */
+.ymm {
+  width:380px; flex-shrink:0;
+  background: rgba(255,255,255,.10);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid rgba(255,255,255,.15);
+  box-shadow: 0 4px 30px rgba(0,0,0,.25);
+  overflow: hidden;
+}
+.ymm__tabs { display:flex; }
+.ymm__tab {
+  flex:1; padding:13px 16px;
+  font-family: var(--font-heading);
+  font-size:.8rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.08em; text-align:center;
+  cursor:pointer; border:none;
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.95);
+  border-bottom: 2px solid rgba(255,255,255,.08);
+}
+.ymm__tab--active {
+  background: var(--brand-primary);
+  color: var(--brand-white);
+  border-bottom-color: var(--brand-primary);
+}
+.ymm__fields {
+  padding:18px 20px 10px;
+  display:flex; flex-direction:column; gap:8px;
+}
+.ymm__field { position:relative; }
+.ymm__field select {
+  width:100%; padding:12px 36px 12px 14px;
+  border: 1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.94);
+  font-family: var(--font-heading);
+  font-size:.80rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.06em;
+  color: var(--brand-charcoal);
+  appearance:none; -webkit-appearance:none;
+  border-radius: var(--radius-md); cursor:pointer;
+  transition: border-color .15s;
+}
+.ymm__field select:focus { outline:none; border-color: var(--brand-primary); }
+.ymm__field::after {
+  content:'▾';
+  position:absolute; right:14px; top:50%;
+  transform:translateY(-50%);
+  pointer-events:none; color:var(--brand-mid-gray); font-size:.7rem;
+}
+.ymm__go { padding:6px 20px 20px; }
+
+.btn-primary {
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  width:100%; padding:14px 28px;
+  border:none; border-radius: var(--radius-md);
+  background: var(--brand-primary); color: var(--brand-white);
+  font-family: var(--font-cta);
+  font-size:.88rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em;
+  cursor:pointer; transition:background .15s;
+}
+.btn-primary:hover  { background: var(--brand-primary-hover); }
+.btn-primary:active { background: var(--brand-primary-deep); }
+
+/* ============================================================
+   SECTION LABEL (shared)
+   ============================================================ */
+.section-label {
+  display:block;
+  font-family: var(--font-body);
+  font-size:.72rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.12em;
+  color: var(--brand-primary);
+  margin-bottom:6px;
+}
+
+/* ============================================================
+   SECTION TRANSITION CHEVRONS
+   ============================================================ */
+.sec-chevron {
+  position: relative;
+  z-index: 10;
+  height: 0;
+  line-height: 0;
+  overflow: visible;
+}
+.sec-chevron--w2d::after {
+  content: '';
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  top: -1px;
+  width: 0; height: 0;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+  border-top: 28px solid var(--brand-white);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,.10));
+}
+.sec-chevron--d2w::after {
+  content: '';
+  position: absolute;
+  left: 50%; transform: translateX(-50%);
+  top: -1px;
+  width: 0; height: 0;
+  border-left: 52px solid transparent;
+  border-right: 52px solid transparent;
+  border-top: 28px solid var(--brand-dark);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,.15));
+}
+
+/* ============================================================
+   BENEFITS STRIP — 4 key value propositions
+   ============================================================ */
+.benefits-strip {
+  background: var(--brand-white);
+  border-top: 3px solid var(--brand-primary);
+  padding-bottom: 32px;
+}
+.benefits-strip__inner {
+  max-width:1200px; margin:0 auto;
+  display:grid; grid-template-columns:repeat(4,1fr);
+  position: relative;
+}
+
+.benefits-strip__inner::before {
+  content: '';
+  position: absolute;
+  top: 110px;
+  left: 12.5%; right: 12.5%;
+  height: 1px;
+  background: linear-gradient(to right,
+    var(--brand-primary-light) 0%,
+    var(--brand-primary) 20%,
+    var(--brand-primary) 80%,
+    var(--brand-primary-light) 100%);
+  opacity: .35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.benefit-step {
+  padding:28px 24px 26px;
+  text-align:center; position:relative; z-index: 1;
+  display:flex; flex-direction:column; align-items:center;
+}
+.benefit-step + .benefit-step { border-left:1px solid var(--brand-border); }
+
+.benefit-step__num {
+  font-family: var(--font-heading);
+  font-size:3rem; font-weight:900;
+  color: var(--brand-primary-press); line-height:1;
+  letter-spacing: .02em;
+  margin-bottom:12px;
+}
+.benefit-step__icon {
+  width:44px; height:44px;
+  background: var(--brand-primary);
+  display:inline-flex; align-items:center; justify-content:center;
+  margin-bottom:10px;
+  position: relative; z-index: 1;
+}
+.benefit-step__icon svg { width:22px; height:22px; fill:var(--brand-white); }
+
+.benefit-step__savings {
+  display:inline-block;
+  font-family: var(--font-cta);
+  font-size:10px; font-weight:800;
+  text-transform:uppercase; letter-spacing:.06em;
+  color: #000000;
+  background: rgba(255,103,32,.18);
+  padding:2px 8px; margin-bottom:8px;
+}
+.benefit-step__title {
+  font-family: var(--font-heading);
+  font-size:.82rem; font-weight:900;
+  text-transform:uppercase; letter-spacing:.06em;
+  color: var(--brand-charcoal); margin-bottom:6px;
+}
+.benefit-step__desc {
+  font-family: var(--font-body);
+  font-size:.80rem; font-weight:400;
+  color: #202020; line-height:1.55;
+  max-width:220px; margin:0 auto;
+}
+
+/* ============================================================
+   WHY PACKAGES — Dark deep-dive section
+   ============================================================ */
+.why-packages {
+  padding:64px 24px 72px;
+  background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-dark) 20%, var(--brand-black) 100%);
+  color: var(--brand-white);
+  border-top: 3px solid var(--brand-primary);
+  position: relative; overflow: hidden;
+}
+
+.why-packages::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    rgba(244,112,40,.08) 30%,
+    rgba(244,112,40,.18) 55%,
+    rgba(126,145,77,.12) 80%,
+    transparent 100%);
+  transform: skewX(-8deg);
+  transform-origin: top right;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.why-packages__inner {
+  max-width:1200px; margin:0 auto;
+  display: flex; flex-direction: column; gap: 40px;
+  position: relative; z-index: 2;
+}
+.why-packages__row {
+  display:grid; grid-template-columns: 1.1fr 1fr;
+  gap:40px; align-items:start;
+}
+.why-packages__row--bottom {
+  grid-template-columns: 1fr 1.05fr;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,.10);
+}
+
+/* Wheel gallery inside why-packages */
+.wheel-gallery__label {
+  display: block; font-family: var(--font-body);
+  font-size: .72rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--brand-primary); margin-bottom: 6px;
+}
+.wheel-gallery__title {
+  font-family: var(--font-heading); font-size: 1.25rem; font-weight: 900;
+  text-transform: uppercase; letter-spacing: .02em;
+  color: var(--brand-white); margin-bottom: 6px; line-height: 1.1;
+}
+.wheel-gallery__sub {
+  font-family: var(--font-body); font-size: .85rem;
+  color: rgba(255,255,255,.60); margin-bottom: 18px; line-height: 1.55;
+}
+.wheel-gallery__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+}
+.wheel-tile {
+  position: relative; aspect-ratio: 1 / 1;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.10);
+  overflow: hidden;
+  transition: border-color .2s, transform .25s;
+}
+.wheel-tile:hover { border-color: var(--brand-primary); transform: translateY(-2px); }
+.wheel-tile img {
+  width: 100%; height: 100%; object-fit: contain;
+  padding: 12px;
+}
+.wheel-tile__corner {
+  position: absolute; top: 0; left: 0;
+  width: 0; height: 0;
+  border-top: 22px solid var(--brand-primary);
+  border-right: 22px solid transparent;
+  opacity: 0; transition: opacity .2s;
+}
+.wheel-tile:hover .wheel-tile__corner { opacity: 1; }
+.wheel-gallery__cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 18px;
+  font-family: var(--font-cta); font-size: .78rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--brand-primary);
+  padding-bottom: 3px; border-bottom: 2px solid var(--brand-primary);
+}
+.wheel-gallery__cta:hover { color: #FF8A40; border-bottom-color: #FF8A40; }
+
+.why-packages__copy .section-label { color:var(--brand-primary); }
+.why-packages__copy h2 {
+  font-family: var(--font-heading);
+  font-size:2rem; font-weight:900;
+  text-transform:uppercase; letter-spacing:.01em; line-height:1.05;
+  color:var(--brand-white); margin-bottom:16px;
+}
+.why-packages__copy p {
+  font-family:var(--font-body); font-size:.9rem; font-weight:400;
+  color:rgba(255,255,255,.70); line-height:1.7; margin-bottom:14px;
+}
+.pkg-stats {
+  display:flex; gap:24px; flex-wrap:wrap;
+  margin-top:20px; padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.10);
+}
+.pkg-stat { display:flex; flex-direction:column; }
+.pkg-stat__num {
+  font-family:var(--font-heading); font-size:1.4rem; font-weight:900;
+  color:var(--brand-primary); line-height:1;
+}
+.pkg-stat__label {
+  font-family:var(--font-body); font-size:.72rem; font-weight:600;
+  text-transform:uppercase; letter-spacing:.04em;
+  color:rgba(255,255,255,.45); margin-top:3px;
+}
+
+.compare-card {
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+  overflow:hidden;
+}
+.compare-card__title {
+  padding:14px 16px; text-align:center;
+  font-family:var(--font-heading); font-size:.75rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.06em;
+  color:rgba(255,255,255,.55);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.compare-row {
+  display:grid; grid-template-columns:1fr 1fr 1fr;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.compare-row--header { background:rgba(255,255,255,.06); }
+.compare-cell {
+  padding:11px 12px;
+  font-family:var(--font-body); font-size:.80rem; font-weight:400;
+  color:rgba(255,255,255,.60);
+  border-right:1px solid rgba(255,255,255,.06);
+}
+.compare-cell:last-child { border-right:none; }
+.compare-row--header .compare-cell {
+  font-family:var(--font-cta); font-size:.72rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.04em;
+  color:rgba(255,255,255,.45);
+}
+.compare-cell.bad  { color:rgba(255,90,90,.75); }
+.compare-cell.good { color:var(--brand-primary); font-weight:700; }
+.compare-card__footer {
+  padding:12px 14px;
+  background:rgba(244,112,40,.10);
+  border-top:1px solid rgba(244,112,40,.25);
+}
+.compare-card__footer p {
+  font-family:var(--font-body); font-size:.78rem;
+  color:var(--brand-primary); font-weight:600; line-height:1.45;
+}
+
+.benefit-item {
+  display:flex; gap:14px; align-items:flex-start;
+  padding:16px 0;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.benefit-item:first-child { padding-top:0; }
+.benefit-item:last-child  { border-bottom:none; }
+.benefit-item__icon {
+  width:36px; height:36px; flex-shrink:0;
+  background:rgba(244,112,40,.18);
+  border:1px solid rgba(244,112,40,.42);
+  display:flex; align-items:center; justify-content:center;
+}
+.benefit-item__icon svg { width:18px; height:18px; fill:var(--brand-primary); }
+.benefit-item__title {
+  font-family:var(--font-heading); font-size:.80rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.04em;
+  color:var(--brand-white); margin-bottom:4px;
+}
+.benefit-item__desc {
+  font-family:var(--font-body); font-size:.78rem; font-weight:400;
+  color:rgba(255,255,255,.55); line-height:1.5;
+}
+
+/* ============================================================
+   REVIEWS STRIP
+   ============================================================ */
+.reviews-strip {
+  padding: 64px 24px 72px;
+  background: #1b1b1b;
+  border-top: 1px solid rgba(255,255,255,.08);
+  position: relative;
+  overflow: hidden;
+}
+.reviews-strip::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: url('images/Topographic Pattern_grey.png') center/cover no-repeat;
+  filter: invert(1) hue-rotate(180deg);
+  opacity: .40;
+  pointer-events: none;
+  z-index: 0;
+}
+.reviews-strip__inner {
+  max-width: 1100px; margin: 0 auto; text-align: center;
+  position: relative; z-index: 1;
+}
+.reviews-strip h2 {
+  font-weight: 900; color: var(--brand-white); margin-bottom: 6px;
+}
+.reviews-strip__inner > p {
+  font-family: var(--font-body); color: rgba(255,255,255,.70);
+  max-width: 560px; margin: 0 auto 0; font-size: .9rem;
+}
+
+.reviews-stats {
+  display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+  padding: 28px 0 32px; margin: 20px 0 32px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+.review-stat { text-align: center; }
+.review-stat__value {
+  font-family: var(--font-heading); font-size: 1.8rem; font-weight: 900;
+  color: var(--brand-primary); line-height: 1;
+  display: flex; align-items: baseline; gap: 4px; justify-content: center;
+}
+.review-stat__value .star { font-size: 1.1rem; }
+.review-stat__label {
+  font-family: var(--font-body); font-size: .72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: rgba(255,255,255,.55); margin-top: 8px;
+}
+
+.reviews-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  text-align: left;
+}
+.review-card {
+  padding: 22px 22px 20px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #181818;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.review-card__stars {
+  color: var(--brand-primary);
+  font-size: 1rem; letter-spacing: .12em;
+  line-height: 1;
+}
+.review-card__quote {
+  font-family: var(--font-body); font-size: .92rem; line-height: 1.55;
+  color: rgba(255,255,255,.88); font-weight: 400;
+  font-style: normal;
+  flex: 1;
+}
+.review-card__meta {
+  padding-top: 12px; border-top: 1px solid rgba(255,255,255,.10);
+}
+.review-card__name {
+  font-family: var(--font-heading); font-size: .82rem; font-weight: 900;
+  text-transform: uppercase; letter-spacing: .04em;
+  color: var(--brand-white);
+}
+.review-card__rig {
+  font-family: var(--font-body); font-size: .74rem; font-weight: 500;
+  color: rgba(255,255,255,.55); margin-top: 3px; line-height: 1.4;
+}
+.review-card__badge {
+  display: inline-flex; align-items: center; gap: 4px; margin-top: 10px;
+  font-family: var(--font-cta); font-size: .64rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: var(--brand-white);
+  padding: 3px 8px;
+  background: var(--brand-accent-deep);
+  border: 1px solid var(--brand-accent-deep);
+}
+
+/* ============================================================
+   FINANCING SECTION
+   ============================================================ */
+.financing-section {
+  padding:56px 24px 72px;
+  background: var(--brand-off-white);
+  border-top:1px solid var(--brand-border);
+}
+.financing-inner { max-width:960px; margin:0 auto; text-align:center; }
+.financing-inner h2 {
+  font-size:1.5rem; font-weight:900; color:var(--brand-charcoal); margin-bottom:4px;
+}
+.financing-inner > p {
+  font-family:var(--font-body); color:var(--brand-mid-gray);
+  max-width:520px; margin:0 auto 36px; font-size:.9rem;
+}
+.financing-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+
+.fin-card {
+  border:1px solid var(--brand-border);
+  background:var(--brand-white);
+  text-align:left; transition:border-color .15s;
+}
+.fin-card:hover { border-color:var(--brand-primary); }
+.fin-card__header { padding:24px 24px 18px; }
+.fin-card__logo { margin-bottom: 12px; line-height: 0; }
+.fin-card__logo img { height: 32px; width: auto; }
+.fin-card__tagline {
+  font-family:var(--font-heading); font-size:.78rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.08em; color:var(--brand-primary-deep);
+}
+.fin-card__row {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 24px; border-top:1px solid var(--brand-border);
+}
+.fin-card__row-label  { font-family:var(--font-body); font-size:.84rem; font-weight:400; color:#333333; }
+.fin-card__row-value  { font-family:var(--font-body); font-size:.84rem; font-weight:700; color:var(--brand-charcoal); text-align:right; }
+.fin-check { color: #2D5016; font-weight:800; }
+.fin-card__cta {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: calc(100% - 40px); margin: 18px 20px 22px;
+  padding: 13px 20px;
+  font-family: var(--font-heading);
+  font-size: 13px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .06em;
+  text-decoration: none;
+  border-radius: 4px; cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.fin-card__cta svg { width: 16px; height: 16px; }
+.fin-card__cta--affirm {
+  background: var(--affirm-blue); color: var(--brand-white); border-color: var(--affirm-blue);
+}
+.fin-card__cta--affirm:hover {
+  background: var(--affirm-blue-hover); border-color: var(--affirm-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(74,74,244,.35);
+}
+.fin-card__cta--katapult {
+  background: var(--katapult-pink); color: var(--brand-white); border-color: var(--katapult-pink);
+}
+.fin-card__cta--katapult:hover {
+  background: var(--katapult-pink-hover); border-color: var(--katapult-pink-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(237,83,112,.35);
+}
+.fin-card__cta:focus-visible { outline: 3px solid var(--brand-dark); outline-offset: 2px; }
+
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery-section {
+  padding:64px 0 0;
+  background: var(--brand-dark);
+  border-top: 3px solid var(--brand-primary);
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-section::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 4%;
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom,
+    rgba(244,112,40,.14) 0%,
+    rgba(244,112,40,.26) 40%,
+    transparent 100%);
+  pointer-events: none; z-index: 1;
+}
+
+.gallery-section .section-header {
+  text-align:center; margin-bottom:16px; padding:0 24px;
+  position: relative; z-index: 2;
+}
+.gallery-section h2 {
+  font-size:1.8rem; font-weight:900; color:var(--brand-white); margin-bottom:8px;
+}
+.gallery-section .section-sub {
+  font-family:var(--font-body); color:rgba(255,255,255,.60); font-size:.95rem;
+  max-width: 640px; margin: 0 auto 8px; line-height: 1.6;
+}
+.gallery-section .section-sub strong {
+  color: var(--brand-primary); font-weight: 700;
+}
+
+.gallery-pitch {
+  max-width: 640px; margin: 0 auto 36px; text-align: center; padding: 0 24px;
+  position: relative; z-index: 2;
+}
+.gallery-pitch__cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 28px;
+  background: var(--brand-primary); color: var(--brand-white);
+  font-family: var(--font-cta); font-size: .88rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .08em;
+  border-radius: var(--radius-md);
+  transition: background .15s;
+  text-decoration: none;
+}
+.gallery-pitch__cta {
+  transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.gallery-pitch__cta:hover {
+  background: var(--brand-primary-press);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255,103,32,.35);
+}
+.gallery-pitch__cta:focus-visible { outline: 3px solid var(--brand-white); outline-offset: 2px; }
+
+.gallery-mosaic {
+  display:grid; grid-template-columns:repeat(12,1fr);
+  grid-auto-rows:130px; gap:3px;
+  max-width:1200px; margin:0 auto; padding:0 24px;
+  position: relative; z-index: 2;
+}
+.gallery-card[data-size="feature"] { grid-column:span 5; grid-row:span 2; }
+.gallery-card[data-size="wide"]    { grid-column:span 4; grid-row:span 2; }
+.gallery-card[data-size="std"]     { grid-column:span 3; grid-row:span 2; }
+
+.gallery-card {
+  position:relative; overflow:hidden;
+  background:#0a0a0a; cursor:pointer;
+}
+.gallery-card img {
+  width:100%; height:100%; object-fit:cover;
+  transition:transform .5s cubic-bezier(.25,.46,.45,.94), filter .4s;
+}
+.gallery-card:hover img { transform:scale(1.08); filter:brightness(.55); }
+.gallery-card::after {
+  content:'';
+  position:absolute; bottom:0; left:0; right:0; height:50%;
+  background:linear-gradient(to top, rgba(0,0,0,.75) 0%, transparent 100%);
+  z-index:1; opacity:0; transition:opacity .35s; pointer-events:none;
+}
+.gallery-card:hover::after { opacity:1; }
+.gallery-card__info {
+  position:absolute; bottom:0; left:0; right:0;
+  padding:16px 14px 14px; z-index:2;
+  transform:translateY(8px); opacity:0;
+  transition:transform .35s, opacity .3s;
+}
+.gallery-card:hover .gallery-card__info { transform:translateY(0); opacity:1; }
+.gallery-card__vehicle {
+  font-family:var(--font-heading); font-size:13px; font-weight:800;
+  text-transform:uppercase; letter-spacing:.04em;
+  color:var(--brand-white); line-height:1.3;
+  text-shadow:0 1px 4px rgba(0,0,0,.6);
+}
+.gallery-card__spec {
+  font-family:var(--font-body); font-size:11px;
+  color:rgba(255,255,255,.70); margin-top:3px;
+  text-shadow:0 1px 3px rgba(0,0,0,.5);
+}
+.gallery-card__accent {
+  position:absolute; top:0; left:0;
+  width:0; height:0;
+  border-top:32px solid var(--brand-primary);
+  border-right:32px solid transparent;
+  z-index:3; opacity:0; transition:opacity .25s;
+}
+.gallery-card:hover .gallery-card__accent { opacity:1; }
+
+.gallery-footer {
+  text-align: center; padding: 28px 24px 52px;
+  position: relative; z-index: 2;
+}
+.gallery-footer p {
+  font-family: var(--font-body); font-size: .82rem;
+  color: rgba(255,255,255,.40); margin-bottom: 12px;
+}
+
+/* ============================================================
+   LEGAL STRIP
+   ============================================================ */
+.legal-strip {
+  text-align:center; padding:16px 24px;
+  font-family:var(--font-body); font-size:.72rem; font-weight:600;
+  color:#B3B3B3;
+  background: var(--brand-charcoal);
+  border-top:1px solid rgba(255,255,255,.08);
+  text-transform:uppercase; letter-spacing:.04em;
+}
+
+/* ============================================================
+   BRAND LOGOS — Auto-scrolling marquee of wheel & tire brands
+   ============================================================ */
+.brand-logos {
+  background: var(--brand-off-white);
+  border-top: 3px solid var(--brand-primary);
+  padding: 36px 0 40px;
+  overflow: hidden;
+  position: relative;
+}
+.brand-logos__heading {
+  text-align: center; margin-bottom: 26px; padding: 0 24px;
+}
+.brand-logos__heading h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--brand-charcoal);
+}
+.brand-logos__track-wrap {
+  display: flex; flex-direction: column; gap: 18px;
+}
+.brand-logos__row {
+  display: flex; gap: 0; width: max-content;
+}
+.brand-logos__row--wheels { animation: marquee-left 22s linear infinite; }
+.brand-logos__row--tires  { animation: marquee-right 36s linear infinite; }
+@keyframes marquee-left  { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes marquee-right { 0%{transform:translateX(-50%)} 100%{transform:translateX(0)} }
+.brand-logo-item {
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 28px; height: 48px; flex-shrink: 0;
+  pointer-events: none;
+}
+.brand-logo-item img {
+  height: 36px; width: auto; max-width: 150px;
+  object-fit: contain;
+}
+.brand-logos__row-label {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-cta); font-size: .68rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .12em;
+  color: var(--brand-primary-deep);
+  padding: 0 20px;
+  white-space: nowrap;
+}
+.brand-logos__row-label::before,
+.brand-logos__row-label::after {
+  content: '';
+  width: 24px; height: 1px;
+  background: rgba(244,112,40,.45);
+}
+
+/* ============================================================
+   STICKY BAR — YMM quick-shop, revealed after scroll.
+   Desktop: inline in the header. Mobile: fixed to the bottom.
+   ============================================================ */
+.sticky-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: var(--brand-black);
+  padding: 10px 16px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: 0 -3px 16px rgba(0,0,0,.30);
+  border-top: 1px solid rgba(255,255,255,.08);
+  transform: translateY(100%);
+  visibility: hidden;
+  transition: transform .35s cubic-bezier(.25,.46,.45,.94), visibility .35s;
+  flex-wrap: nowrap; text-align: center;
+}
+.sticky-bar.is-visible { transform: translateY(0); visibility: visible; }
+
+@media (min-width: 861px) {
+  .site-header:has(.sticky-bar.is-visible) { justify-content: space-between; }
+  .site-header .sticky-bar {
+    position: absolute; right: 24px; top: 50%; z-index: auto;
+    background: transparent; padding: 0;
+    box-shadow: none; border: 0;
+    transform: translateY(calc(-50% - 6px)); opacity: 0;
+    transition: transform .25s ease, opacity .25s ease, visibility .25s;
+    justify-content: flex-end;
+  }
+  .site-header .sticky-bar.is-visible { position: static; transform: none; opacity: 1; flex: 1 1 auto; min-width: 0; }
+  .site-header .sticky-bar__fields { flex: 0 1 auto; min-width: 0; }
+  .site-header .sticky-select { flex: 1 1 130px; min-width: 0; }
+}
+@media (min-width: 861px) and (max-width: 1100px) {
+  .site-header .sticky-bar__label { display: none; }
+}
+.sticky-bar__label {
+  font-family: var(--font-cta); font-size: .72rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .05em;
+  color: var(--brand-white); white-space: nowrap;
+  display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+}
+.sticky-bar__label .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--brand-primary);
+  animation: pulse 1.6s ease-in-out infinite;
+}
+.sticky-bar__fields {
+  display: flex; align-items: center; gap: 6px; flex: 0 0 auto; flex-wrap: nowrap;
+  justify-content: center;
+}
+.sticky-select {
+  position: relative; flex: 1; min-width: 90px; max-width: 150px;
+}
+.sticky-select select {
+  width: 100%;
+  padding: 8px 24px 8px 10px;
+  font-family: var(--font-cta); font-size: .72rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .04em;
+  color: var(--brand-charcoal);
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.18);
+  border-radius: var(--radius-md);
+  appearance: none; -webkit-appearance: none;
+  cursor: pointer; transition: border-color .15s;
+}
+.sticky-select select:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 2px; }
+.sticky-select::after {
+  content: '▾'; position: absolute;
+  right: 7px; top: 50%; transform: translateY(-50%);
+  font-size: .6rem; pointer-events: none; color: var(--brand-charcoal);
+}
+.sticky-bar__btn {
+  padding: 9px 30px; flex-shrink: 0;
+  font-family: var(--font-cta); font-size: .78rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .06em;
+  background: var(--brand-primary); color: var(--brand-white);
+  border: none; border-radius: var(--radius-md); cursor: pointer;
+  transition: background .15s; text-decoration: none; white-space: nowrap;
+}
+.sticky-bar__btn { transition: background .15s ease, transform .15s ease, box-shadow .15s ease; }
+.sticky-bar__btn:hover {
+  background: var(--brand-primary-press);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255,103,32,.35);
+}
+.sticky-bar__btn:focus-visible { outline: 3px solid var(--brand-white); outline-offset: 2px; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:960px){
+  .why-packages__row,
+  .why-packages__row--bottom { grid-template-columns:1fr; gap: 32px; }
+}
+@media(max-width:860px){
+  .hero__inner { flex-direction:column; align-items:stretch; padding:48px 24px 72px; gap:32px; }
+  .hero__copy { max-width:100%; text-align:center; }
+  .hero__trust { justify-content:center; }
+  .hero__sub { margin-left:auto; margin-right:auto; }
+  .ymm { width:100%; max-width:440px; margin:0 auto; }
+  .hero__overlay {
+    background:
+      linear-gradient(to bottom, rgba(24,24,24,.75) 0%, rgba(24,24,24,.45) 30%, rgba(24,24,24,0) 50%),
+      linear-gradient(to top, rgba(45,51,73,.96) 0%, rgba(45,51,73,.80) 50%, rgba(45,51,73,.50) 100%);
+  }
+  .sec-chevron--w2d::after,
+  .sec-chevron--d2w::after { border-left-width:36px; border-right-width:36px; border-top-width:20px; }
+}
+@media(max-width:768px){
+  .benefits-strip__inner {
+    display: flex;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    padding: 0 16px;
+    scrollbar-width: none;
+  }
+  .benefits-strip__inner::-webkit-scrollbar { display: none; }
+  .benefits-strip__inner::before { display:none; }
+  .benefits-strip__inner:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: -2px; }
+  .benefit-step { flex: 0 0 46%; scroll-snap-align: start; }
+  .reviews-grid {
+    display: flex; gap: 14px;
+    overflow-x: auto; overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    margin: 0 -24px; padding: 0 24px 4px;
+    scroll-padding-inline: 24px;
+    scrollbar-width: none;
+  }
+  .reviews-grid::-webkit-scrollbar { display: none; }
+  .reviews-grid:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: -2px; }
+  .review-card { flex: 0 0 82%; scroll-snap-align: start; }
+  .reviews-stats { gap: 28px; }
+  .financing-grid { grid-template-columns:1fr; }
+  .gallery-pitch { padding: 0 16px; }
+  .gallery-pitch__cta {
+    width: 100%; justify-content: center;
+    padding: 13px 12px; gap: 8px;
+    font-size: clamp(10.5px, 3vw, 14px); letter-spacing: .03em;
+    white-space: nowrap;
+  }
+  .gallery-pitch__cta svg { width: 16px; height: 16px; flex-shrink: 0; }
+  .wheel-gallery__cta { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
+  .fin-card__cta {
+    width: calc(100% - 28px); margin: 16px 14px 18px;
+    padding: 13px 12px; gap: 6px;
+    font-size: clamp(10.5px, 3.1vw, 13px); letter-spacing: .03em;
+    white-space: nowrap;
+  }
+  .fin-card__cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .wheel-gallery__grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery-mosaic { grid-auto-rows:110px; }
+  .gallery-card[data-size="feature"],
+  .gallery-card[data-size="wide"],
+  .gallery-card[data-size="std"] { grid-column:span 6; }
+}
+@media(max-width:640px){
+  .hero__inner { padding:28px 16px 64px; gap:24px; }
+  .hero-badge { margin-bottom: 14px; }
+  .hero h1 { line-height: .95; margin-bottom: 14px; }
+  .hero__sub { font-size: .95rem; line-height: 1.5; margin-bottom: 20px; letter-spacing: 1.2px; }
+  .hero__trust { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; }
+  .hero__trust-item { align-items: flex-start; text-align: left; }
+  .hero__trust-text { font-size: 11px; line-height: 1.3; }
+  .pkg-stats { flex-wrap: nowrap; gap: 12px; }
+  .pkg-stat { flex: 1 1 0; min-width: 0; }
+  .pkg-stat__num { font-size: 1.2rem; white-space: nowrap; }
+  .pkg-stat__label { font-size: .66rem; line-height: 1.3; }
+  .benefit-step { flex-basis: 78%; }
+  .gallery-mosaic { grid-auto-rows:100px; gap:2px; }
+  .gallery-card[data-size="feature"] { grid-column:span 12; }
+  .gallery-card[data-size="wide"],
+  .gallery-card[data-size="std"] { grid-column:span 6; }
+  .sec-chevron--w2d::after,
+  .sec-chevron--d2w::after { border-left-width:28px; border-right-width:28px; border-top-width:16px; }
+}
+
+
+/* ---- Prequalify modal ---- */
+.prequal-modal {
+  display: none;
+  position: fixed; inset: 0;
+  z-index: 9999;
+  align-items: center; justify-content: center;
+  padding: 4vh 16px;
+}
+.prequal-modal:not([inert]) { display: flex; }
+.prequal-modal__backdrop {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.55);
+}
+.prequal-modal__panel {
+  position: relative;
+  width: 100%; max-width: 460px;
+  background: var(--brand-white);
+  border-top: 3px solid var(--brand-primary);
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  animation: prequalIn .18s ease-out;
+}
+@keyframes prequalIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.prequal-modal__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 22px; border-bottom: 1px solid var(--brand-border);
+}
+.prequal-modal__brand { display: block; line-height: 0; }
+.prequal-modal__brand img { height: 28px; width: auto; }
+.prequal-modal__close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; padding: 0;
+  background: none; border: none; border-radius: 50%; cursor: pointer;
+  color: var(--brand-mid-gray);
+  transition: color .15s, background .15s;
+}
+.prequal-modal__close svg { width: 28px; height: 28px; }
+.prequal-modal__close:hover { color: var(--brand-charcoal); background: var(--brand-off-white); }
+.prequal-modal__close:focus-visible { outline: 2px solid var(--brand-dark); outline-offset: 2px; }
+.prequal-modal__body { padding: 22px 24px 24px; }
+.prequal-modal__title {
+  font-family: var(--font-heading); font-weight: 900;
+  font-size: 1.35rem; color: var(--brand-charcoal);
+  margin: 0 0 8px; letter-spacing: .02em;
+}
+.prequal-modal__intro {
+  font-family: var(--font-body); font-size: .88rem;
+  color: var(--brand-mid-gray); line-height: 1.5;
+  margin: 0 0 18px;
+}
+.prequal-modal__field { margin-bottom: 14px; }
+.prequal-modal__label {
+  display: block;
+  font-family: var(--font-heading); font-size: .72rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: var(--brand-charcoal); margin-bottom: 6px;
+}
+.prequal-modal__input,
+.prequal-modal__select {
+  width: 100%; box-sizing: border-box;
+  padding: 11px 13px;
+  font-family: var(--font-body); font-size: .95rem;
+  color: var(--brand-charcoal);
+  background: var(--brand-white);
+  border: 1px solid var(--brand-border);
+  border-radius: 3px;
+}
+.prequal-modal__select {
+  appearance: none; -webkit-appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23181818' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 14px;
+  cursor: pointer;
+}
+.prequal-modal__input:focus,
+.prequal-modal__select:focus {
+  outline: none; border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px rgba(244,112,40,.18);
+}
+.prequal-modal__submit {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; margin-top: 6px;
+  padding: 13px 20px;
+  font-family: var(--font-heading);
+  font-size: 13px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: var(--brand-white); background: var(--brand-primary);
+  border: 2px solid var(--brand-primary);
+  border-radius: 4px; cursor: pointer;
+  transition: background .15s ease, transform .15s ease;
+}
+.prequal-modal__submit:hover { background: var(--brand-primary-hover); border-color: var(--brand-primary-hover); transform: translateY(-1px); }
+.prequal-modal__submit--affirm { background: var(--affirm-blue); border-color: var(--affirm-blue); color: var(--brand-white); }
+.prequal-modal__submit--affirm:hover {
+  background: var(--affirm-blue-hover); border-color: var(--affirm-blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(74,74,244,.35);
+}
+.prequal-modal__submit--katapult { background: var(--katapult-pink); border-color: var(--katapult-pink); color: var(--brand-white); }
+.prequal-modal__submit--katapult:hover {
+  background: var(--katapult-pink-hover); border-color: var(--katapult-pink-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(237,83,112,.35);
+}
+.prequal-modal__disclaimer {
+  margin: 14px 0 0;
+  font-family: var(--font-body); font-size: .72rem;
+  color: var(--brand-mid-gray); line-height: 1.5;
+}
+body.prequal-open { overflow: hidden; }
+@media (max-width: 480px) {
+  .prequal-modal { padding: 2vh 12px; }
+  .prequal-modal__body { padding: 18px 20px 22px; }
+  .prequal-modal__title { font-size: 1.2rem; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ======= HEADER ======= -->
+<header class="site-header">
+  <div class="logo-wrap"><img src="images/TB_PrimaryLogo_Black.png" alt="TrailBuilt Offroad"></div>
+
+  <button type="button" class="header-add-vehicle" id="headerAddVehicle" aria-controls="hero-ymm">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg>
+    Add Vehicle
+  </button>
+
+  <div class="sticky-bar" id="stickyBar" role="search" aria-label="Quick package finder">
+    <div class="sticky-bar__label">
+      <span class="dot"></span> Find Packages
+    </div>
+    <form class="sticky-bar__fields" onsubmit="event.preventDefault(); window.location.href='https://www.trailbuiltoffroad.com/wheel-tire-packages?year='+encodeURIComponent(this.year.value)+'&make='+encodeURIComponent(this.make.value)+'&model='+encodeURIComponent(this.model.value)+'&trim='+encodeURIComponent(this.trim.value)+'&drive='+encodeURIComponent(this.drive.value);">
+      <div class="sticky-select">
+        <select name="year" aria-label="Vehicle Year" required>
+          <option value="">Year</option>
+          <script>for(let y=2026;y>=2000;y--) document.write(`<option value="${y}">${y}</option>`)</script>
+        </select>
+      </div>
+      <div class="sticky-select">
+        <select name="make" aria-label="Vehicle Make" required>
+          <option value="">Make</option>
+          <option>Jeep</option><option>Toyota</option><option>Ford</option>
+          <option>Chevrolet</option><option>GMC</option><option>Ram</option>
+          <option>Nissan</option><option>Dodge</option>
+        </select>
+      </div>
+      <div class="sticky-select">
+        <select name="model" aria-label="Vehicle Model">
+          <option value="">Model</option>
+          <option>Wrangler</option><option>Gladiator</option><option>Tacoma</option>
+          <option>4Runner</option><option>Bronco</option><option>F-150</option>
+          <option>Silverado 1500</option><option>Sierra 1500</option><option>1500</option>
+        </select>
+      </div>
+      <div class="sticky-select">
+        <select name="trim" aria-label="Trim Level">
+          <option value="">Trim</option>
+          <option>Rubicon</option><option>Sahara</option><option>Willys</option>
+          <option>Mojave</option><option>TRD Off-Road</option><option>TRD Pro</option>
+          <option>Trail Boss</option><option>ZR2</option>
+        </select>
+      </div>
+      <div class="sticky-select">
+        <select name="drive" aria-label="Drive Type">
+          <option value="">Drive</option>
+          <option>4WD</option><option>2WD</option><option>AWD</option>
+        </select>
+      </div>
+      <button type="submit" class="sticky-bar__btn">Shop →</button>
+    </form>
+  </div>
+</header>
+
+<!-- ======= HERO ======= -->
+<section class="hero">
+  <div class="hero__photo" style="background-image:url('images/Hero.jpg');"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__glow"></div>
+  <div class="hero__accent-glow"></div>
+  <div class="hero__lines"></div>
+  <div class="hero__line3"></div>
+  <div class="hero__redline"></div>
+
+  <div class="hero__scroll-cue">
+    <span>Learn More</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </div>
+
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <div class="hero-badge"><span class="dot"></span> Mounted, Balanced &amp; Shipped Free</div>
+      <h1><span>Built for the</span><em>Trail Ahead.</em></h1>
+      <p class="hero__sub">
+        Off-road-ready wheel &amp; tire packages for your Wrangler, Gladiator, Tacoma and more, mounted, balanced, and shipped free to your door.
+        <strong>No shop visits. No guesswork. Just bolt &amp; go.</strong>
+      </p>
+      <div class="hero__trust">
+        <div class="hero__trust-item">
+          <span class="hero__trust-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M19.3 5.71a.996.996 0 0 0-1.41 0l-9.19 9.19-3.54-3.54a.996.996 0 1 0-1.41 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l9.9-9.9c.38-.38.38-1.02-.01-1.4z"/></svg>
+          </span>
+          <span class="hero__trust-text">Free Mount &amp; Balance</span>
+        </div>
+        <div class="hero__trust-item">
+          <span class="hero__trust-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+          </span>
+          <span class="hero__trust-text">Free Shipping</span>
+        </div>
+        <div class="hero__trust-item">
+          <span class="hero__trust-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+          </span>
+          <span class="hero__trust-text">Package Savings</span>
+        </div>
+        <div class="hero__trust-item">
+          <span class="hero__trust-icon">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          </span>
+          <span class="hero__trust-text">Financing Available</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="ymm" id="hero-ymm">
+      <div class="ymm__tabs">
+        <button class="ymm__tab ymm__tab--active">Shop by Vehicle</button>
+      </div>
+      <form onsubmit="event.preventDefault(); document.getElementById('why-packages').scrollIntoView({behavior:'smooth'})">
+        <div class="ymm__fields">
+          <div class="ymm__field">
+            <select aria-label="Vehicle Year"><option>Year</option><script>for(let y=2026;y>=2000;y--) document.write(`<option>${y}</option>`)</script></select>
+          </div>
+          <div class="ymm__field">
+            <select aria-label="Vehicle Make"><option>Make</option><option>Jeep</option><option>Toyota</option><option>Ford</option><option>Chevrolet</option><option>GMC</option><option>Ram</option><option>Nissan</option></select>
+          </div>
+          <div class="ymm__field">
+            <select aria-label="Vehicle Model"><option>Model</option><option>Wrangler</option><option>Gladiator</option><option>Tacoma</option><option>4Runner</option><option>Bronco</option><option>F-150</option><option>Silverado 1500</option><option>1500</option></select>
+          </div>
+          <div class="ymm__field">
+            <select aria-label="Trim Level"><option>Trim Level</option><option>Rubicon</option><option>Sahara</option><option>Willys</option><option>Mojave</option><option>TRD Off-Road</option><option>TRD Pro</option><option>Trail Boss</option></select>
+          </div>
+          <div class="ymm__field">
+            <select aria-label="Drive Type"><option>Drive</option><option>4WD</option><option>2WD</option></select>
+          </div>
+          <div class="ymm__field">
+            <select aria-label="Suspension Type"><option>Suspension</option><option>Stock</option><option>Leveled</option><option>Lifted 2"</option><option>Lifted 2.5"</option><option>Lifted 3–4"</option><option>Lifted 4.5–6"</option><option>Lifted 6"+</option></select>
+          </div>
+        </div>
+        <div class="ymm__go">
+          <button type="submit" class="btn-primary">Find My Packages →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ======= BENEFITS STRIP ======= -->
+<section class="benefits-strip">
+  <div class="benefits-strip__inner" role="region" aria-label="Package benefits" tabindex="0">
+
+    <div class="benefit-step">
+      <span class="benefit-step__num">01</span>
+      <div class="benefit-step__icon">
+        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+      </div>
+      <div class="benefit-step__savings">Save $160–$280</div>
+      <div class="benefit-step__title">Free Mount &amp; Balance</div>
+      <div class="benefit-step__desc">We professionally mount and balance every package before it ships. That's an estimated $160–$280 in shop fees you're not paying.</div>
+    </div>
+
+    <div class="benefit-step">
+      <span class="benefit-step__num">02</span>
+      <div class="benefit-step__icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+      </div>
+      <div class="benefit-step__savings">Always Included</div>
+      <div class="benefit-step__title">Free Shipping</div>
+      <div class="benefit-step__desc">Your complete 4-wheel setup ships to your door anywhere in the contiguous US. No freight surprises at checkout.</div>
+    </div>
+
+    <div class="benefit-step">
+      <span class="benefit-step__num">03</span>
+      <div class="benefit-step__icon">
+        <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+      </div>
+      <div class="benefit-step__savings">Bundle &amp; Save</div>
+      <div class="benefit-step__title">Package Savings</div>
+      <div class="benefit-step__desc">Bundled pricing means you pay less than buying wheels and tires separately. More rig for your dollar.</div>
+    </div>
+
+    <div class="benefit-step">
+      <span class="benefit-step__num">04</span>
+      <div class="benefit-step__icon">
+        <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+      </div>
+      <div class="benefit-step__savings">Skip the Wait</div>
+      <div class="benefit-step__title">No Tire Shop Needed</div>
+      <div class="benefit-step__desc">Arrives ready to install. No booking an appointment, no 3-hour wait, no unnecessary upselling.</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="sec-chevron sec-chevron--w2d"></div>
+
+<!-- ======= WHY PACKAGES ======= -->
+<section class="why-packages" id="why-packages">
+  <div class="why-packages__inner">
+
+    <div class="why-packages__row">
+
+    <div class="why-packages__copy">
+      <span class="section-label">Why Buy a Package?</span>
+      <h2>Built to Save You Time and Money</h2>
+      <p>Think about what normally happens when you build a rig: you order the wheels, wait for delivery, order the tires, wait again, haul everything to a shop, book an appointment, drop your truck off, sit in a waiting room for 3 hours, then pay $25–$35 per wheel just to get them mounted and balanced.</p>
+      <p>With our wheel and tire package, all of that disappears. We pair your wheels and tires at our facility, mount and balance the complete set, and ship everything ready to bolt on. Your only job is hitting the trail.</p>
+      <div class="pkg-stats">
+        <div class="pkg-stat">
+          <span class="pkg-stat__num">$300+</span>
+          <span class="pkg-stat__label">Avg. Package Savings</span>
+        </div>
+        <div class="pkg-stat">
+          <span class="pkg-stat__num">3–4 hrs</span>
+          <span class="pkg-stat__label">Tire Shop Time Saved</span>
+        </div>
+        <div class="pkg-stat">
+          <span class="pkg-stat__num">50K+</span>
+          <span class="pkg-stat__label">Packages Shipped</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-packages__compare">
+      <div class="compare-card">
+        <div class="compare-card__title">Package vs. Buying Separate</div>
+        <div class="compare-row compare-row--header">
+          <div class="compare-cell"></div>
+          <div class="compare-cell">Local Shop</div>
+          <div class="compare-cell">TrailBuilt</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell">Mount &amp; Balance</div>
+          <div class="compare-cell bad">$160–$280</div>
+          <div class="compare-cell good">FREE</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell">Shipping</div>
+          <div class="compare-cell bad">$150+</div>
+          <div class="compare-cell good">FREE</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell">Wait Time</div>
+          <div class="compare-cell bad">3–4 Hours</div>
+          <div class="compare-cell good">0 Hours</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell">Appointment</div>
+          <div class="compare-cell bad">Required</div>
+          <div class="compare-cell good">Not Needed</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell">Guaranteed Fit</div>
+          <div class="compare-cell bad">You Figure It Out</div>
+          <div class="compare-cell good">Lift-Specific</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-cell">Ready to Install</div>
+          <div class="compare-cell bad">After Shop Visit</div>
+          <div class="compare-cell good">Ships Ready</div>
+        </div>
+        <div class="compare-card__footer">
+          <p>✓ Save $310–$430+ compared to buying separate, paying for local mounting, and shipping fees</p>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- /.why-packages__row -->
+
+    <div class="why-packages__row why-packages__row--bottom">
+
+    <div class="why-packages__checklist">
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M19.3 5.71a.996.996 0 0 0-1.41 0l-9.19 9.19-3.54-3.54a.996.996 0 1 0-1.41 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l9.9-9.9c.38-.38.38-1.02-.01-1.4z"/></svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">Expertly Mounted &amp; Balanced</div>
+          <div class="benefit-item__desc">Every package is mounted and balanced by our team using professional-grade equipment before it leaves our facility.</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M19.3 5.71a.996.996 0 0 0-1.41 0l-9.19 9.19-3.54-3.54a.996.996 0 1 0-1.41 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l9.9-9.9c.38-.38.38-1.02-.01-1.4z"/></svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">Lift-Specific Fitment</div>
+          <div class="benefit-item__desc">Every combination is verified to fit your exact year, make, model, and lift height, no guesswork or clearance surprises.</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M19.3 5.71a.996.996 0 0 0-1.41 0l-9.19 9.19-3.54-3.54a.996.996 0 1 0-1.41 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l9.9-9.9c.38-.38.38-1.02-.01-1.4z"/></svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">Ships in ~2 Business Days</div>
+          <div class="benefit-item__desc">Most packages ship within 2 business days. Your complete set arrives carefully packaged and protected, ready to hit the trail.</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M19.3 5.71a.996.996 0 0 0-1.41 0l-9.19 9.19-3.54-3.54a.996.996 0 1 0-1.41 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l9.9-9.9c.38-.38.38-1.02-.01-1.4z"/></svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">Flexible Financing Available</div>
+          <div class="benefit-item__desc">Get your setup now and pay over time, as low as 0% APR through Affirm or just $1 down with Katapult. Options for every credit type.</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M19.3 5.71a.996.996 0 0 0-1.41 0l-9.19 9.19-3.54-3.54a.996.996 0 1 0-1.41 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l9.9-9.9c.38-.38.38-1.02-.01-1.4z"/></svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">Off-Road Fitment Experts</div>
+          <div class="benefit-item__desc">Real wheelers on our team. Our fitment specialists wheel their own rigs.</div>
+        </div>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-item__icon">
+          <svg viewBox="0 0 24 24"><path d="M19.3 5.71a.996.996 0 0 0-1.41 0l-9.19 9.19-3.54-3.54a.996.996 0 1 0-1.41 1.41l4.24 4.24c.39.39 1.02.39 1.41 0l9.9-9.9c.38-.38.38-1.02-.01-1.4z"/></svg>
+        </div>
+        <div>
+          <div class="benefit-item__title">We Mount Anything</div>
+          <div class="benefit-item__desc">Tires up to 58 inches, full beadlock wheels, dual rear setups, the builds local tire shops turn away.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-packages__wheels">
+      <span class="wheel-gallery__label">Built With</span>
+      <h3 class="wheel-gallery__title">Trail-Proven Wheels &amp; Tires</h3>
+      <p class="wheel-gallery__sub">Every package is built around the brands that actually hold up, Method, Fuel, KMC, BFGoodrich, Toyo, Nitto, and more.</p>
+      <div class="wheel-gallery__grid">
+        <a href="#" class="wheel-tile">
+          <img src="images/wheels-tires/AOR_Mercenary_SatinBlackGlossAccents.png" alt="Arkon Off-Road Mercenary, Satin Black with Gloss Accents" loading="lazy">
+          <span class="wheel-tile__corner"></span>
+        </a>
+        <a href="#" class="wheel-tile">
+          <img src="images/wheels-tires/RRW-RR6-H.png" alt="RRW RR6-H" loading="lazy">
+          <span class="wheel-tile__corner"></span>
+        </a>
+        <a href="#" class="wheel-tile">
+          <img src="images/wheels-tires/icon-alloys-compression-wheel-8lug-satin-black-18x9-1000_7952.png" alt="Icon Alloys Compression, Satin Black" loading="lazy">
+          <span class="wheel-tile__corner"></span>
+        </a>
+        <a href="#" class="wheel-tile">
+          <img src="images/wheels-tires/baja-boss-3q-640x640.png" alt="Mickey Thompson Baja Boss A/T" loading="lazy">
+          <span class="wheel-tile__corner"></span>
+        </a>
+        <a href="#" class="wheel-tile">
+          <img src="images/wheels-tires/ckkntcqqj036r01p5t1me29zs-bfgoodrich-all-terrain-t-slash-a-ko2-1.full.png" alt="BFGoodrich All-Terrain T/A KO2" loading="lazy">
+          <span class="wheel-tile__corner"></span>
+        </a>
+        <a href="#" class="wheel-tile">
+          <img src="images/wheels-tires/kelfire-3-4.png" alt="Kelfire" loading="lazy">
+          <span class="wheel-tile__corner"></span>
+        </a>
+      </div>
+      <a href="#" class="wheel-gallery__cta">Shop All Wheels &amp; Tires →</a>
+    </div>
+
+    </div><!-- /.why-packages__row--bottom -->
+
+  </div>
+</section>
+
+<div class="sec-chevron sec-chevron--d2w"></div>
+
+<!-- ======= BRAND LOGOS — Wheel & Tire brands we carry ======= -->
+<section class="brand-logos">
+  <div class="brand-logos__heading">
+    <h3>Hundreds of Wheel &amp; Tire Brands, One Simple Package</h3>
+  </div>
+  <div class="brand-logos__track-wrap">
+
+    <!-- Row 1: Wheel brands (scrolls left) -->
+    <div class="brand-logos__row brand-logos__row--wheels">
+      <!-- Original set -->
+      <div class="brand-logo-item"><div class="brand-logos__row-label">Wheels</div></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Fuel_Wheel.png" alt="Fuel Off-Road"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/KMC_Wheel.png" alt="KMC"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Icon_Wheel.png" alt="Icon Alloys"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Vision_Wheel.png" alt="Vision"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/BlackRhino_Wheel.png" alt="Black Rhino"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/DirtyLife_Wheel.png" alt="Dirty Life"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/RRW_Wheel.png" alt="RRW"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Lock_Wheel.png" alt="Lock Off-Road"></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="brand-logo-item"><div class="brand-logos__row-label">Wheels</div></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Fuel_Wheel.png" alt="Fuel Off-Road"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/KMC_Wheel.png" alt="KMC"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Icon_Wheel.png" alt="Icon Alloys"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Vision_Wheel.png" alt="Vision"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/BlackRhino_Wheel.png" alt="Black Rhino"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/DirtyLife_Wheel.png" alt="Dirty Life"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/RRW_Wheel.png" alt="RRW"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Lock_Wheel.png" alt="Lock Off-Road"></div>
+    </div>
+
+    <!-- Row 2: Tire brands (scrolls right) -->
+    <div class="brand-logos__row brand-logos__row--tires">
+      <!-- Original set -->
+      <div class="brand-logo-item"><div class="brand-logos__row-label">Tires</div></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/BFG_Tire.png" alt="BFGoodrich"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Toyo_Tire.png" alt="Toyo"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Mickey_Tire.png" alt="Mickey Thompson"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Falken_Tire.png" alt="Falken"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Nitto_Tire.png" alt="Nitto"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Gladiator_Tire.png" alt="Gladiator"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/General_Tire.png" alt="General"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Radar_Tire.png" alt="Radar"></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="brand-logo-item"><div class="brand-logos__row-label">Tires</div></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/BFG_Tire.png" alt="BFGoodrich"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Toyo_Tire.png" alt="Toyo"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Mickey_Tire.png" alt="Mickey Thompson"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Falken_Tire.png" alt="Falken"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Nitto_Tire.png" alt="Nitto"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Gladiator_Tire.png" alt="Gladiator"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/General_Tire.png" alt="General"></div>
+      <div class="brand-logo-item"><img src="images/OffRoad Logos/Radar_Tire.png" alt="Radar"></div>
+    </div>
+
+  </div>
+</section>
+
+<div class="sec-chevron sec-chevron--w2d"></div>
+
+<!-- ======= REVIEWS STRIP ======= -->
+<section class="reviews-strip">
+  <div class="reviews-strip__inner">
+    <span class="section-label">Reviews from the Trail</span>
+    <h2>Trusted by Wheelers Coast to Coast</h2>
+    <p>Don't take our word for it, hear from the people who bolted our packages onto their rigs.</p>
+
+    <div class="reviews-stats">
+      <div class="review-stat">
+        <div class="review-stat__value">4.9<span class="star">★</span></div>
+        <div class="review-stat__label">Average Rating</div>
+      </div>
+      <div class="review-stat">
+        <div class="review-stat__value">12,400+</div>
+        <div class="review-stat__label">Verified Reviews</div>
+      </div>
+      <div class="review-stat">
+        <div class="review-stat__value">97%</div>
+        <div class="review-stat__label">Would Refer a Friend</div>
+      </div>
+    </div>
+
+    <div class="reviews-grid" role="region" aria-label="Customer reviews" tabindex="0">
+
+      <article class="review-card">
+        <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <div class="review-card__quote">
+          "Ordered my Methods and KO2s on Monday, they were mounted, balanced, and bolted on by Friday. No tire shop, no upcharges on valve stems, exactly what they promised."
+        </div>
+        <div class="review-card__meta">
+          <div class="review-card__name">Patrick H.</div>
+          <div class="review-card__rig">2023 Jeep Wrangler Rubicon · Method MR305 · BFG KO2</div>
+          <span class="review-card__badge">✓ Verified Purchase</span>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <div class="review-card__quote">
+          "The fitment team knew my truck and suspension setup better than I did. Package arrived perfectly balanced and saved me a full Saturday sitting at the shop."
+        </div>
+        <div class="review-card__meta">
+          <div class="review-card__name">Marcus D.</div>
+          <div class="review-card__rig">2022 Toyota Tacoma TRD Off-Road · Fuel Covert · Toyo Open Country</div>
+          <span class="review-card__badge">✓ Verified Purchase</span>
+        </div>
+      </article>
+
+      <article class="review-card">
+        <div class="review-card__stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <div class="review-card__quote">
+          "Third package I've ordered from TrailBuilt. Never had a balance issue, never had a fitment problem. They do this right every single time."
+        </div>
+        <div class="review-card__meta">
+          <div class="review-card__name">Jen R.</div>
+          <div class="review-card__rig">2024 Jeep Gladiator Mojave · KMC KM549 · Nitto Ridge Grappler</div>
+          <span class="review-card__badge">✓ Verified Purchase</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======= FINANCING ======= -->
+<section class="financing-section">
+  <div class="financing-inner">
+    <span class="section-label">Flexible Financing</span>
+    <h2>Build Now, Pay Over Time</h2>
+    <p>Get the complete setup you want today with monthly payments that work for your budget. Options available for all credit types, even no credit.</p>
+    <div class="financing-grid">
+
+      <div class="fin-card">
+        <div class="fin-card__header">
+          <div class="fin-card__logo"><img src="images/financing/affirm-logo.svg" alt="Affirm" width="105" height="32"></div>
+          <div class="fin-card__tagline">As Low as 0% APR</div>
+        </div>
+        <div class="fin-card__rows">
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Credit Check</span>
+            <span class="fin-card__row-value">Soft Pull Only</span>
+          </div>
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Terms</span>
+            <span class="fin-card__row-value">3, 6, or 12 Months</span>
+          </div>
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Down Payment</span>
+            <span class="fin-card__row-value">None Required</span>
+          </div>
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Approval Speed</span>
+            <span class="fin-card__row-value">Instant Decision</span>
+          </div>
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Best For</span>
+            <span class="fin-card__row-value fin-check">Good / Great Credit</span>
+          </div>
+        </div>
+        <button type="button" class="fin-card__cta fin-card__cta--affirm" data-prequal-open="affirm">
+          Get Pre-Approved with Affirm
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+        </button>
+      </div>
+
+      <div class="fin-card">
+        <div class="fin-card__header">
+          <div class="fin-card__logo"><img src="images/financing/katapult-logo.svg" alt="Katapult" width="147" height="32"></div>
+          <div class="fin-card__tagline">Lease-to-Own</div>
+        </div>
+        <div class="fin-card__rows">
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Credit Check</span>
+            <span class="fin-card__row-value">No Credit Needed</span>
+          </div>
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Terms</span>
+            <span class="fin-card__row-value">Flexible Lease</span>
+          </div>
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Down Payment</span>
+            <span class="fin-card__row-value">$1 Down</span>
+          </div>
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Approval Speed</span>
+            <span class="fin-card__row-value">Instant Decision</span>
+          </div>
+          <div class="fin-card__row">
+            <span class="fin-card__row-label">Best For</span>
+            <span class="fin-card__row-value fin-check">All Credit Types</span>
+          </div>
+        </div>
+        <button type="button" class="fin-card__cta fin-card__cta--katapult" data-prequal-open="katapult">
+          Get Pre-Approved with Katapult
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="sec-chevron sec-chevron--w2d"></div>
+
+<!-- ======= GALLERY ======= -->
+<section class="gallery-section" id="gallery">
+
+  <div class="section-header">
+    <span class="section-label">Still Figuring Out Your Setup?</span>
+    <h2>See It on a Rig Like Yours</h2>
+    <p class="section-sub">
+      Not sure which wheels, tire size, or lift combo is right? The TrailBuilt gallery is the
+      <strong>best place to find out.</strong> Search by your exact year, make, model, lift height, and wheel brand
+      to see real photos of real rigs running the setup you're considering.
+    </p>
+  </div>
+
+  <div class="gallery-pitch">
+    <a href="https://www.trailbuiltoffroad.com/gallery" target="_blank" class="gallery-pitch__cta">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      Search the Gallery by Your Vehicle
+    </a>
+  </div>
+
+  <div class="gallery-mosaic" id="galleryMosaic"></div>
+
+  <div class="gallery-footer">
+    <p>* Thousands of real customer builds, filtered by your exact vehicle, lift, and wheel specs.</p>
+  </div>
+
+</section>
+
+<!-- ======= LEGAL ======= -->
+<div class="legal-strip">
+  &copy; 2026 TrailBuilt Offroad &bull; All rights reserved &bull; Financing through Affirm and Katapult, see provider terms &bull; Free mount, balance &amp; shipping applies to all wheel &amp; tire packages shipped within the contiguous US
+</div>
+
+
+<script>
+/* ---- Header state after scrolling past hero: desktop finder / mobile Add Vehicle ---- */
+(function(){
+  const header = document.querySelector('.site-header');
+  const bar    = document.getElementById('stickyBar');
+  const addBtn = document.getElementById('headerAddVehicle');
+  function update(){
+    const scrolled = window.scrollY > 600;
+    header.classList.toggle('is-scrolled', scrolled);
+    bar.classList.toggle('is-visible', scrolled);
+  }
+  window.addEventListener('scroll', update, { passive:true });
+  update();
+  addBtn.addEventListener('click', function(){
+    const ymm = document.getElementById('hero-ymm');
+    ymm.scrollIntoView({ behavior:'smooth', block:'center' });
+    ymm.querySelector('select').focus({ preventScroll:true });
+  });
+})();
+</script>
+
+<script>
+const galleryData = [
+  { src:'images/rig-01.jpg', vehicle:'Jeep Wrangler JL',        spec:'Velocity Build · Stinger Bumper · Mickey Thompson Baja Boss',   size:'feature' },
+  { src:'images/rig-02.jpg', vehicle:'Jeep Gladiator JT',       spec:'Custom Build · Beadlock Wheels · 40" Super Swamper',            size:'std' },
+  { src:'images/rig-03.jpg', vehicle:'GMC Sierra 1500 Overland',spec:'KMC Wheels · Nitto Ridge Grappler · Roof Top Tent',             size:'wide' },
+  { src:'images/rig-04.jpg', vehicle:'Toyota RAV4 Overland',    spec:'Lock Off-Road · Falken Wildpeak A/T · Roof Top Tent',           size:'wide' },
+  { src:'images/rig-05.jpg', vehicle:'Toyota 4Runner TRD Pro',  spec:'Lock Off-Road · BFGoodrich A/T KO2 · Roof Top Tent',            size:'std' },
+  { src:'images/rig-06.jpg', vehicle:'Jeep Wrangler JL',        spec:'Travel Build · Kenda Klever R/T · Roof Rack',                   size:'feature' },
+];
+
+document.getElementById('galleryMosaic').innerHTML = galleryData.map(g => `
+  <div class="gallery-card" data-size="${g.size}">
+    <img src="${g.src}" alt="${g.vehicle}" loading="lazy">
+    <div class="gallery-card__accent"></div>
+    <div class="gallery-card__info">
+      <div class="gallery-card__vehicle">${g.vehicle}</div>
+      <div class="gallery-card__spec">${g.spec}</div>
+    </div>
+  </div>`).join('');
+</script>
+
+<!-- ======= PREQUALIFY MODALS ======= -->
+<div class="prequal-modal" id="prequal-modal-affirm" role="dialog" aria-modal="true" aria-labelledby="prequal-affirm-title" inert>
+  <div class="prequal-modal__backdrop" data-prequal-close></div>
+  <div class="prequal-modal__panel">
+    <div class="prequal-modal__header">
+      <span class="prequal-modal__brand"><img src="images/financing/affirm-logo.svg" alt="Affirm" width="92" height="28"></span>
+      <button type="button" class="prequal-modal__close" data-prequal-close aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+      </button>
+    </div>
+    <div class="prequal-modal__body">
+      <h3 class="prequal-modal__title" id="prequal-affirm-title">Get Pre-Approved with Affirm</h3>
+      <p class="prequal-modal__intro">See if you're pre-approved for Affirm monthly payments in seconds. Soft credit pull only - no impact to your score.</p>
+      <form class="prequal-modal__form" data-prequal-form="affirm" action="https://www.affirm.com/apps/prequal/" method="get" target="_blank" rel="noopener">
+        <div class="prequal-modal__field">
+          <label class="prequal-modal__label" for="affirm-price">What is the price of what you want?</label>
+          <input class="prequal-modal__input" id="affirm-price" name="amount" type="text" inputmode="decimal" placeholder="$ 0.00" required>
+        </div>
+        <div class="prequal-modal__field">
+          <label class="prequal-modal__label" for="affirm-zip">Your Zip code</label>
+          <input class="prequal-modal__input" id="affirm-zip" name="zip" type="text" inputmode="numeric" maxlength="5" pattern="\d{5}" placeholder="12345" required>
+        </div>
+        <div class="prequal-modal__field">
+          <label class="prequal-modal__label" for="affirm-term">Preferred loan term</label>
+          <select class="prequal-modal__select" id="affirm-term" name="term">
+            <option value="3">3 months</option>
+            <option value="6">6 months</option>
+            <option value="12" selected>12 months</option>
+          </select>
+        </div>
+        <button type="submit" class="prequal-modal__submit prequal-modal__submit--affirm">Continue to Affirm</button>
+        <p class="prequal-modal__disclaimer">You'll be taken to Affirm to finish pre-approval. Rates from 0-36% APR. Payment options depend on your purchase amount, and a down payment may be required. See affirm.com for details.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="prequal-modal" id="prequal-modal-katapult" role="dialog" aria-modal="true" aria-labelledby="prequal-katapult-title" inert>
+  <div class="prequal-modal__backdrop" data-prequal-close></div>
+  <div class="prequal-modal__panel">
+    <div class="prequal-modal__header">
+      <span class="prequal-modal__brand"><img src="images/financing/katapult-logo.svg" alt="Katapult" width="129" height="28"></span>
+      <button type="button" class="prequal-modal__close" data-prequal-close aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
+      </button>
+    </div>
+    <div class="prequal-modal__body">
+      <h3 class="prequal-modal__title" id="prequal-katapult-title">Get Pre-Approved with Katapult</h3>
+      <p class="prequal-modal__intro">No credit needed. Get started for as little as $1 down and see your lease-to-own payments before you apply.</p>
+      <form class="prequal-modal__form" data-prequal-form="katapult" action="https://katapult.com/" method="get" target="_blank" rel="noopener">
+        <div class="prequal-modal__field">
+          <label class="prequal-modal__label" for="kat-price">What is the price of what you want?</label>
+          <input class="prequal-modal__input" id="kat-price" name="price" type="text" inputmode="decimal" placeholder="$ 0.00" required>
+        </div>
+        <div class="prequal-modal__field">
+          <label class="prequal-modal__label" for="kat-zip">Your Zip code</label>
+          <input class="prequal-modal__input" id="kat-zip" name="zip" type="text" inputmode="numeric" maxlength="5" pattern="\d{5}" placeholder="12345" required>
+        </div>
+        <div class="prequal-modal__field">
+          <label class="prequal-modal__label" for="kat-frequency">How often do you get paid?</label>
+          <select class="prequal-modal__select" id="kat-frequency" name="paid">
+            <option value="weekly">Weekly</option>
+            <option value="biweekly" selected>Every 2 weeks</option>
+            <option value="semimonthly">Twice a month</option>
+            <option value="monthly">Monthly</option>
+          </select>
+        </div>
+        <button type="submit" class="prequal-modal__submit prequal-modal__submit--katapult">Estimate My Payments</button>
+        <p class="prequal-modal__disclaimer">You'll be taken to Katapult to complete lease-to-own pre-approval. Not a loan. Terms vary by state. See katapult.com for details.</p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  var openButtons = document.querySelectorAll('[data-prequal-open]');
+  var closeTargets = document.querySelectorAll('[data-prequal-close]');
+  var modals = document.querySelectorAll('.prequal-modal');
+  function openModal(name) {
+    var modal = document.getElementById('prequal-modal-' + name);
+    if (!modal) return;
+    modal.removeAttribute('aria-hidden');
+    modal.removeAttribute('inert');
+    document.body.classList.add('prequal-open');
+  }
+  function closeAll() {
+    modals.forEach(function(m){
+      m.setAttribute('inert', '');
+    });
+    document.body.classList.remove('prequal-open');
+  }
+  openButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal(btn.getAttribute('data-prequal-open'));
+    });
+  });
+  closeTargets.forEach(function(el){
+    el.addEventListener('click', closeAll);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeAll();
+  });
+})();
+</script>
+</body>
+</html>
